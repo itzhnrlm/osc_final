@@ -9,3 +9,9 @@ Retype new password:
 passwd: password updated successfully
 root@zhanel-VirtualBox:~# whoami
 root
+zhanel@zhanel-VirtualBox:~$ su - studentt
+Password: 
+su: warning: cannot change directory to /home/studentt: No such file or directory
+$ whoami
+studentt
+$
