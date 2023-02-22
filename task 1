@@ -1,0 +1,11 @@
+zhanel@zhanel-VirtualBox:~$ whoami
+zhanel
+zhanel@zhanel-VirtualBox:~$ sudo -i
+[sudo] password for zhanel: 
+root@zhanel-VirtualBox:~# sudo useradd studentt
+root@zhanel-VirtualBox:~# sudo passwd studentt
+New password: 
+Retype new password: 
+passwd: password updated successfully
+root@zhanel-VirtualBox:~# whoami
+root
