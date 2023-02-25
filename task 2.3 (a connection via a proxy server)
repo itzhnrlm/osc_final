@@ -1,4 +1,23 @@
+//Setting Up Temporary Proxy for a Single User
+
 export HTTP_PROXY=aitzhanarailym:@Arailym160903@10.240.12.97:3128
 export HTTPS_PROXY=aitzhanarailym:@Arailym160903@10.240.12.97:3128
 export FTP_PROXY=aitzhanarailym:@Arailym160903@10.240.12.97:3128
 export NO_PROXY=localhost,127.0.0.1,::1
+
+//Setting Up Permanent Proxy for a Single User
+
+sudo nano ~/.bashrc
+
+//Now add the following lines at the bottom of the .bashrc file
+
+export HTTP_PROXY="aitzhanarailym:@Arailym160903@10.240.12.97:3128"
+export HTTPS_PROXY="aitzhanarailym:@Arailym160903@10.240.12.97:3128"
+export FTP_PROXY="aitzhanarailym:@Arailym160903@10.240.12.97:3128"
+export NO_PROXY="localhost,127.0.0.1,::1"
+
+//Then, run the following command in to apply the new settings to the current session
+
+source ~/.bashrc
+
+
