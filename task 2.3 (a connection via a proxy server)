@@ -20,4 +20,14 @@ export NO_PROXY="localhost,127.0.0.1,::1"
 
 source ~/.bashrc
 
+//Setting Up Permanent Proxy for All Users
+
+sudo nano /etc/environment
+
+//Next, update the file with the same information you added to the .bashrc file in the previous scenario
+
+export HTTP_PROXY="aitzhanarailym:@Arailym160903@10.240.12.97:3128"
+export HTTPS_PROXY="aitzhanarailym:@Arailym160903@10.240.12.97:3128"
+export FTP_PROXY="aitzhanarailym:@Arailym160903@10.240.12.97:3128"
+export NO_PROXY="localhost,127.0.0.1,::1"
 
