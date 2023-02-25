@@ -1,0 +1,105 @@
+ayakoz@zhanel-VirtualBox:~$ sudo apt-get install network-manager
+[sudo] password for ayakoz: 
+Sorry, try again.
+[sudo] password for ayakoz: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+network-manager is already the newest version (1.36.6-0ubuntu2).
+The following packages were automatically installed and are no longer required:
+  chromium-codecs-ffmpeg-extra gstreamer1.0-vaapi i965-va-driver
+  intel-media-va-driver libaacs0 libaom3 libass9 libavcodec58 libavformat58
+  libavutil56 libbdplus0 libblas3 libbluray2 libbs2b0 libchromaprint1
+  libcodec2-1.0 libdav1d5 libflite1 libgme0 libgsm1
+  libgstreamer-plugins-bad1.0-0 libigdgmm12 liblilv-0-0 libmfx1 libmysofa1
+  libnorm1 libopenmpt0 libpgm-5.3-0 libpostproc55 librabbitmq4 librubberband2
+  libserd-0-0 libshine3 libsnappy1v5 libsord-0-0 libsratom-0-0
+  libsrt1.4-gnutls libssh-gcrypt-4 libswresample3 libswscale5 libudfread0
+  libva-drm2 libva-wayland2 libva-x11-2 libva2 libvdpau1 libvidstab1.1
+  libx265-199 libxvidcore4 libzimg2 libzmq5 libzvbi-common libzvbi0
+  mesa-va-drivers mesa-vdpau-drivers pocketsphinx-en-us systemd-hwe-hwdb
+  va-driver-all vdpau-driver-all
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 155 not upgraded.
+ayakoz@zhanel-VirtualBox:~$ sudo apt-get install dhcpcd
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Package dhcpcd is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+However the following packages replace it:
+  dhcpcd5
+
+E: Package 'dhcpcd' has no installation candidate
+ayakoz@zhanel-VirtualBox:~$ sudo apt-get install dhcpcd5
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  chromium-codecs-ffmpeg-extra gstreamer1.0-vaapi i965-va-driver
+  intel-media-va-driver libaacs0 libaom3 libass9 libavcodec58 libavformat58
+  libavutil56 libbdplus0 libblas3 libbluray2 libbs2b0 libchromaprint1
+  libcodec2-1.0 libdav1d5 libflite1 libgme0 libgsm1
+  libgstreamer-plugins-bad1.0-0 libigdgmm12 liblilv-0-0 libmfx1 libmysofa1
+  libnorm1 libopenmpt0 libpgm-5.3-0 libpostproc55 librabbitmq4 librubberband2
+  libserd-0-0 libshine3 libsnappy1v5 libsord-0-0 libsratom-0-0
+  libsrt1.4-gnutls libssh-gcrypt-4 libswresample3 libswscale5 libudfread0
+  libva-drm2 libva-wayland2 libva-x11-2 libva2 libvdpau1 libvidstab1.1
+  libx265-199 libxvidcore4 libzimg2 libzmq5 libzvbi-common libzvbi0
+  mesa-va-drivers mesa-vdpau-drivers pocketsphinx-en-us systemd-hwe-hwdb
+  va-driver-all vdpau-driver-all
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  openresolv
+Suggested packages:
+  dhcpcd-gtk
+The following NEW packages will be installed:
+  dhcpcd5 openresolv
+0 upgraded, 2 newly installed, 0 to remove and 155 not upgraded.
+Need to get 188 kB of archives.
+After this operation, 510 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://kz.archive.ubuntu.com/ubuntu jammy/universe amd64 dhcpcd5 amd64 7.1.0-2build1 [163 kB]
+Get:2 http://kz.archive.ubuntu.com/ubuntu jammy/universe amd64 openresolv all 3.12.0-2 [25,6 kB]
+Fetched 188 kB in 1s (152 kB/s)       
+Selecting previously unselected package dhcpcd5.
+(Reading database ... 199488 files and directories currently installed.)
+Preparing to unpack .../dhcpcd5_7.1.0-2build1_amd64.deb ...
+Unpacking dhcpcd5 (7.1.0-2build1) ...
+Selecting previously unselected package openresolv.
+Preparing to unpack .../openresolv_3.12.0-2_all.deb ...
+Unpacking openresolv (3.12.0-2) ...
+Setting up dhcpcd5 (7.1.0-2build1) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/dhcpcd.service → /lib/systemd/system/dhcpcd.service.
+Setting up openresolv (3.12.0-2) ...
+Processing triggers for man-db (2.10.2-1) ...
+ayakoz@zhanel-VirtualBox:~$ ip link show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether 08:00:27:ea:eb:9d brd ff:ff:ff:ff:ff:ff
+ayakoz@zhanel-VirtualBox:~$ sudo dhcpcd enp0s3
+DUID 00:04:fb:4d:5e:4b:e6:dd:a3:4e:8b:9c:09:46:f1:96:00:e8
+enp0s3: IAID 27:ea:eb:9d
+enp0s3: soliciting an IPv6 router
+enp0s3: soliciting a DHCP lease
+enp0s3: offered 10.0.2.15 from 10.0.2.2
+enp0s3: leased 10.0.2.15 for 86400 seconds
+enp0s3: adding route to 10.0.2.0/24
+enp0s3: adding default route via 10.0.2.2
+forked to background, child pid 7222
+ayakoz@zhanel-VirtualBox:~$ ip link show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether 08:00:27:ea:eb:9d brd ff:ff:ff:ff:ff:ff
+ayakoz@zhanel-VirtualBox:~$ ping google.com -c3
+PING google.com (64.233.164.113) 56(84) bytes of data.
+64 bytes from lf-in-f113.1e100.net (64.233.164.113): icmp_seq=1 ttl=101 time=124 ms
+64 bytes from lf-in-f113.1e100.net (64.233.164.113): icmp_seq=2 ttl=101 time=125 ms
+64 bytes from lf-in-f113.1e100.net (64.233.164.113): icmp_seq=3 ttl=101 time=136 ms
+
+--- google.com ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2036ms
+rtt min/avg/max/mdev = 124.216/128.247/135.954/5.451 ms
